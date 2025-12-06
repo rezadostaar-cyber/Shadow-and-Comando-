@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XO OSKAR - کانال‌های من</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+        }
+        .container {
+            padding: 25px 20px 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 58px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            margin: 20px 0 10px;
+            background: linear-gradient(90deg, #ff00aa, #00ffff, #ffff00, #ff00aa);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 7s ease-in-out infinite;
+        }
+        @keyframes shine {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            font-size: 28px;
+            margin: 5px 0 10px;
+            background: linear-gradient(90deg, #ff00aa, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 18px auto;
+            max-width: 92%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .card:active {
+            transform: scale(0.96);
+            background: #1f1f1f;
+        }
+        .card .emoji {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        .card h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 80px;
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">XO OSKAR</div>
+    <h1>کانال‌های من</h1>
+    <p>یکی رو انتخاب کن و وارد شو</p>
+
+    <div class="card" onclick="openChannel('shadow_alonex')">
+        <div class="emoji">Shadow Alonex</div>
+        <h3>@shadow_alonex</h3>
+    </div>
+
+    <div class="card" onclick="openChannel('NiCaToR_NKR')">
+        <div class="emoji">NiCaToR NKR</div>
+        <h3>@NiCaToR_NKR</h3>
+    </div>
+
+    <div class="card" onclick="openChannel('XO_OSKAR')">
+        <div class="emoji">XO OSKAR</div>
+        <h3>@XO_OSKAR</h3>
+    </div>
+
+    <div class="footer">
+        با ساخته شده برای شما
+    </div>
+</div>
+
+<script>
+    Telegram.WebApp.ready();
+    Telegram.WebApp.expand();
+    Telegram.WebApp.setHeaderColor('#000000');
+    Telegram.WebApp.setBackgroundColor('#000000');
+
+    function openChannel(username) {
+        Telegram.WebApp.openTelegramLink('https://t.me/' + username);
+    }
+</script>
+
+</body>
+</html>
